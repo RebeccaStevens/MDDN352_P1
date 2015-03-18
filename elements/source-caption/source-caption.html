@@ -1,0 +1,13 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="source-caption" noscript>
+  <template>
+    <link rel="stylesheet" href="source-caption.css">
+    <div id="content-wrap">
+      <content select=":not([caption])" id="content"></content>
+     </div>
+     <div id="caption-wrap">
+       <content select="[caption]" id="caption"></content>
+     </div>
+  </template>
+</polymer-element>

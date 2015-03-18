@@ -1,0 +1,18 @@
+html /deep/ a,
+html /deep/ a:visited{
+  color: #bd2a2a;
+  text-decoration: none;
+}
+
+html /deep/ a:hover,
+html /deep/ a:active{
+  text-decoration: underline;
+}
+.layout > *{
+	margin: 4px;
+}
+.layout[layout][horizontal]{
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+}

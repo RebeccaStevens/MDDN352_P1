@@ -1,17 +1,186 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-
-<link rel="import" href="elements/test-element/test-element.html">
-
-<title>MDDN 352 Project 1</title>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  
+	<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+	
+	<link rel="stylesheet" href="app.css">
+	
+	<link rel="import" href="elements/page-content/page-content.html">
+	<link rel="import" href="elements/main-section/main-section.html">
+	<link rel="import" href="elements/basic-gallery/basic-gallery.html">
+  <link rel="import" href="elements/source-caption/source-caption.html">
+  <link rel="import" href="elements/image-360/image-360.html">
+  <link rel="import" href="elements/text-block/text-block.html">
+	
+	<title>MDDN 352 Project 1</title>
 </head>
-<body>
-
-<test-element></test-element>
+<body fullbleed unresolved>
+  
+  <template is="auto-binding" id="app">
+    <script>
+    var app = document.querySelector('#app');
+    app.cantransition = true;
+    </script>
+    <page-content fit toolbartitle="My Cosplay Site" cantransition?="{{cantransition}}">
+      <main-section layout center center-justified style="background:#0374dc;" sectionTitle="Overwatch">
+        <img src="images/overwatch/overwatch.png" header>
+        <div layout horizontal justified wrap class="layout">
+	        <text-block flex>
+	          <h1>Overwatch at BlizzCon 2014</h1>
+	          <p>During the Blizzcon 2014, Blizzard announced Overwatch, a character-driven competitive first-person shooter.</p>
+	          <p>At the show's costume contest few hours later, the first two Overwatch cosplayers appeared; Rachel Day as Widowmaker, and Val as Mercy.</p>
+	        </text-block>
+	        <source-caption>
+	          <basic-gallery>
+              <img src="images/overwatch/widowmaker.jpg" hdsrc="images/overwatch/widowmaker_hd.jpg" hdwidth="940" hdheight="529">
+              <img src="images/overwatch/widowmaker2.jpg" hdsrc="images/overwatch/widowmaker2_hd.jpg" hdwidth="940" hdheight="529">
+            </basic-gallery>
+            <p caption>
+              Rachel Day cosplaying as Widowmaker from Overwatch &ndash;
+              <a href="http://kotaku.com/day-one-overwatch-cosplay-at-blizzcon-1656365857">source</a>
+            </p>
+	        </source-caption>
+	      </div>
+	      <div layout horizontal justified wrap class="layout">
+	        <source-caption>
+	          <basic-gallery>
+              <img src="images/overwatch/mercy.jpg" hdsrc="images/overwatch/mercy_hd.jpg" hdwidth="940" hdheight="529">
+              <img src="images/overwatch/mercy2.jpg" hdsrc="images/overwatch/mercy2_hd.jpg" hdwidth="970" hdheight="546">
+            </basic-gallery>
+            <p caption>
+              Val cosplaying as Mercy from Overwatch &ndash;
+              <a href="http://kotaku.com/day-one-overwatch-cosplay-at-blizzcon-1656365857">source</a>
+            </p>
+          </source-caption>
+	        <source-caption>
+	          <basic-gallery>
+	            <img src="images/overwatch/tracer.jpg" hdsrc="images/overwatch/tracer_hd.jpg" hdwidth="1500" hdheight="1000">
+	            <img src="images/overwatch/tracer_overlay.jpg" hdsrc="images/overwatch/tracer_org.jpg" hdwidth="794" hdheight="432">
+	          </basic-gallery>
+	          <p caption>
+	            <a href="https://www.facebook.com/yaseminarslan.official" target="_blank">Yasemin Arslan</a> cosplaying as Tracer from Overwatch &ndash;
+	            <a href="http://cosplay.kotaku.com/the-secret-behind-a-terrific-cosplay-photo-big-arms-1691594830">source</a>
+	          </p>
+	        </source-caption>
+	      </div>
+      </main-section>
+      <main-section layout center center-justified style="background:#a2a2a2;" sectionTitle="SyFu FanCam 360">
+        <img src="images/syfy/syfy.png" header>
+        <div layout horizontal justified wrap class="layout">
+          <source-caption>
+            <image-360 filepath="images/syfy/wolverine/" filesequence="wolverine.###.jpg" imagecount="167" firstimage="94" autoload></image-360>
+            <p caption>
+              Wolverine Cosplayer &ndash;
+              <a href="https://vimeo.com/98212485">source</a>
+            </p>
+          </source-caption>
+          <source-caption flex>
+            <text-block>
+	            <h1>SyFy FanCam 360</h1>
+	            <p>Syfy Australia brought along a 56-camera contraption they're calling FanCam 360 to the most recent Supanova Pop Culture Expo in Sydney.<br>
+	            It's basically the same type of thing used to swoop the camera around characters during bullet-time shots in The Matrix.</p>
+	            <p>The effect is pretty neat, and creates the opportunity for some amazing face-offs, midair hero poses and more.</p>
+	          </text-block>
+            <p caption>
+              <a href="http://www.blastr.com/2014-6-17/best-fancam-360-sydneys-supanova-pop-culture-expo">source</a>
+            </p>
+          </source-caption>
+        </div>
+        <div layout horizontal justified wrap class="layout" style="margin:auto;">
+          <iframe width="1280" height="750" src="https://www.youtube.com/embed/sisGqMf7G7Y" frameborder="0" allowfullscreen style="margin: auto;"></iframe>
+        </div>
+      </main-section>
+      <main-section layout center center-justified style="background:#545454;" sectionTitle="Star Wars">
+        <img src="images/starwars/starwars.png" header>
+        <div layout horizontal justified wrap class="layout">
+          <source-caption>
+            <basic-gallery style="width:900px; height:665px; overflow: hidden;">
+              <img src="images/starwars/1.jpg">
+              <img src="images/starwars/2.jpg">
+              <img src="images/starwars/3.jpg">
+              <img src="images/starwars/4.jpg">
+              <img src="images/starwars/5.jpg">
+            </basic-gallery>
+            <p caption>
+              <a href="http://www.irelandgarrison.com/garrison/home.html" target="_blank" sl-processed="1">Emerald Garrison</a> Cosplaying &ndash;
+              <a href="http://cosplay.kotaku.com/the-force-is-strong-with-these-cosplayers-1552429796">source</a>
+            </p>
+          </source-caption>
+          <text-block flex>
+            <h1>Star Wars</h1>
+            <p>[insert words here]</p>
+          </text-block>
+          <div layout horizontal justified wrap class="layout" style="margin:auto;">
+            <iframe width="1280" height="750" src="https://www.youtube.com/embed/XOG9Q0sQ6TY" frameborder="0" allowfullscreen style="margin: auto;"></iframe>
+          </div>
+        </div>
+      </main-section>
+      <main-section layout center center-justified style="background:pink;" sectionTitle="Gender Bending">
+        <div layout horizontal justified wrap class="layout">
+	        <text-block flex>
+	          <h1>Gender Bending</h1>
+	          <p>"Gender-Bending" is a complete redesign of a fictional character to make them appear as if they always belonged to the opposite sex.</p>
+	          <p>Unlink "Crossplay", where the the cosplayer cross-dresses as the original sex of the character.</p>
+	        </text-block>
+	        <source-caption>
+            <basic-gallery>
+              <img src="images/gb/thor.jpg" width="800">
+            </basic-gallery>
+            <p caption>
+              <a href="http://www.deviantart.com/art/Thor-Cosplay-San-Diego-Comic-Con-2014-471114071" target="_blank" sl-processed="1">piratesavvy07</a> cosplaying as Thor &ndash;
+              <a href="http://cosplay.kotaku.com/its-not-the-same-design-as-the-official-art-but-hey-t-1611849894">source</a>
+            </p>
+          </source-caption>
+	      </div>
+        <div layout horizontal justified wrap class="layout">
+          <source-caption>
+            <basic-gallery>
+              <img src="images/gb/misty.jpg" width="912">
+            </basic-gallery>
+            <p caption>
+              <a href="https://www.facebook.com/mistafah.cosplay" target="_blank" sl-processed="1">Zee 'JiNxXx' Kotwal</a> cosplaying as Misty &ndash;
+              <a href="http://kotaku.com/pokemons-beefiest-misty-cosplay-1597546026">source</a>
+            </p>
+          </source-caption>
+          <source-caption>
+            <basic-gallery>
+              <img src="images/gb/misty2.jpg">
+            </basic-gallery>
+            <p caption>
+              <a href="https://www.facebook.com/mistafah.cosplay" target="_blank" sl-processed="1">Zee 'JiNxXx' Kotwal</a> cosplaying as Misty &ndash;
+              <a href="http://kotaku.com/pokemons-beefiest-misty-cosplay-1597546026">source</a>
+            </p>
+          </source-caption>
+        </div>
+        <div layout horizontal justified wrap class="layout">
+          <source-caption>
+            <basic-gallery>
+              <img src="images/gb/fin.jpg" height="950">
+            </basic-gallery>
+            <p caption>
+              <a href="https://www.facebook.com/StaceyRebeccaAltModel" target="_blank" sl-processed="1">Stacey Rebecca</a> cosplaying as Fin &ndash;
+              <a href="http://cosplay.kotaku.com/finn-hearts-haribo-1627802666">source</a>
+            </p>
+          </source-caption>
+          <source-caption>
+            <basic-gallery>
+              <img src="images/gb/link.jpg" height="950">
+            </basic-gallery>
+            <p caption>
+              <a href="https://www.facebook.com/TaliaMiraCosplay" target="_blank" sl-processed="1">Talia Mira</a> cosplaying as Link &ndash;
+              <a href="http://cosplay.kotaku.com/no-zelda-is-the-girl-link-is-the-oh-1680482942">source</a>
+            </p>
+          </source-caption>
+        </div>
+      </main-section>
+    </page-content>
+  </template>
 
 </body>
 </html>

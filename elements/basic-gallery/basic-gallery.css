@@ -1,0 +1,53 @@
+:host{
+  display: block;
+  max-width: 100vw;
+  position: relative;
+}
+polyfill-next-selector { content: ':host > :not(.active)' }
+::content > :not(.active) {
+  display: none;
+}
+polyfill-next-selector { content: ':host > .active' }
+::content > .active {
+  display: block;
+  max-width: 100vw;
+}
+paper-icon-button{
+	position: absolute;
+	color: #dddddd;
+	stroke: #aaaaaa;
+  stroke-width: 1px;
+  stroke-opacity: 0.33;
+}
+paper-icon-button:hover{
+  color: #ffffff;
+}
+paper-icon-button.big,
+paper-icon-button.big::shadow #icon{
+  width: 32px;
+  height: 32px;
+}
+paper-icon-button.very-big,
+paper-icon-button.very-big::shadow #icon{
+  width: 92px;
+  height: 92px;
+}
+paper-icon-button#prev{
+  top: 8px;
+	left: 0;
+}
+paper-icon-button#next{
+  top: 8px;
+	right: 0;
+}
+paper-icon-button#zoom{
+  top: 56px;
+  left: 0;
+}
+paper-icon-button#play{
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}

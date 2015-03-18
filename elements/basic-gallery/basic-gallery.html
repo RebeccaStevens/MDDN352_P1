@@ -1,0 +1,35 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/core-icons/core-icons.html">
+<link rel="import" href="../../bower_components/core-icons/av-icons.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../bower_components/polymer-gestures/polymer-gestures.html">
+
+<polymer-element name="basic-gallery" attributes="cycle canPlay autoplay">
+  <template>
+    <link rel="stylesheet" href="basic-gallery.css">
+    <content select=":not(template)" id="content"></content>
+    <div id="swipedetector" fit hidden?="{{!canPlay}}" touch-action="pan-y"></div>
+    <paper-icon-button icon="arrow-back" class="big" id="prev" hidden?="{{!cycle && index==0}}" on-tap="{{prevImage}}"></paper-icon-button>
+    <paper-icon-button icon="arrow-forward" class="big" id="next" hidden?="{{!cycle && index==imageCount - 1}}" on-tap="{{nextImage}}"></paper-icon-button>
+    <paper-icon-button icon="search" class="big" id="zoom" hidden?="{{!canZoom}}" on-tap="{{zoomImage}}"></paper-icon-button>
+    <paper-icon-button icon="av:play-circle-outline" class="very-big" id="play" hidden?="{{!canPlay || playing}}" on-tap="{{playGallery}}"></paper-icon-button>
+    <paper-dialog id="imagedialog" backdrop layered opened="{{dialogopen}}">
+      <style>
+      #close-btn{
+			  position: absolute;
+			  top: 4px;
+			  right: 4px;
+			  background: red;
+			  border-radius: 20px;
+			}
+			img{
+			  display: block;
+			}
+      </style>
+      <paper-icon-button core-overlay-toggle icon="close" id="close-btn"></paper-icon-button>
+      <img id="hdimage">
+    </paper-dialog>
+  </template>
+  <script src="basic-gallery.js"></script>
+</polymer-element>

@@ -1,0 +1,17 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../basic-gallery/basic-gallery.html">
+
+<polymer-element name="image-360" attributes="filepath filesequence imagecount firstimage autoplay autoload">
+  <template>
+    <link rel="stylesheet" href="image-360.css">
+    <basic-gallery cycle canplay autoplay?={{autoplay}} id="gallery">
+	    <template if="{{autoload}}" repeat="{{image in images}}">
+	      <img src="{{image.src}}" id="image{{image.id}}">
+	    </template>
+	    <template if="{{!autoload}}" repeat="{{image in images}}">
+	      <img id="image{{image.id}}" hidden?={{index!=image.id}}>
+	    </template>
+	  </basic-gallery>
+	</template>
+  <script src="image-360.js"></script>
+</polymer-element>

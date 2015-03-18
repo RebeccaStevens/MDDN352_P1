@@ -1,0 +1,15 @@
+:host{
+  display: block;
+  font-size: 16pt;
+  background: #ffffff;
+  color: black;
+  padding: 8px;
+  min-width: 400px;
+}
+polyfill-next-selector { content: ':host > h1' }
+::content > h1 {
+  margin-top: 0;
+  font-size: 32pt;
+  font-family: monospace;
+  text-align: center;
+}

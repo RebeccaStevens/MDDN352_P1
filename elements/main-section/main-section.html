@@ -1,0 +1,13 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="main-section" attributes="sectionTitle">
+	<template>
+		<link rel="stylesheet" href="main-section.css">
+		<div id="header">
+		  <content select="[header]"></content>
+		</div>
+		<div class="clearfix"></div>
+		<content></content>
+	</template>
+	<script src="main-section.js"></script>
+</polymer-element>
